@@ -1,0 +1,383 @@
+<html>
+<head>
+	<title> CYCLEWALA </title>
+<link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css">
+
+<style>
+    <!--designing the sidebar -->
+    * {
+        margin:45px;
+        padding:0px;
+        font-family:Verdana;
+       }
+    #sidebar 
+       {
+          position:absolute;
+          width:200px;
+          height:30%;
+          background:#232527;
+          left:-200px;
+          transition: all 500ms linear;
+       }
+    #sidebar.active 
+	{
+	  left:0px;
+	}
+   #sidebar ul li
+       {
+          color:rgba(240,130,160,0.9);
+          list-style:none;
+          padding:15px 5px;
+          border-bottom:1px solid rgb(100,100,100);
+       }
+   #sidebar .togglebtn
+	{
+ 	   position:absolute;
+	   left:250px;
+	   top:25px;
+	}
+   #sidebar .togglebtn span
+	{
+ 	  display:block;
+              width:25px;
+ 	  height:5px;
+ 	  background:#252729;
+	  margin:4px 0px;
+	}
+
+<!--styling search bar-->
+   body
+	{
+	  margin:0;
+	  padding-left:0;
+	}
+  .searchbar
+	{
+	   position:absolute ;
+	   top:50%
+	   left:-50%;
+	   transform:translate(-40%, -40%);
+	   background-color:#2f3640;
+	   height:20px;
+	   border-radius:25px;
+	   padding:10px;
+	   margin-left:73%;
+	   
+	}
+  .inputbox
+	{
+	   border:none;
+	   outline:none;
+	   background:none;
+	   padding:0px;
+	   color:#fff;
+	   font-size:15px;
+	   line-height:20px;
+	   width:230px;
+	}
+  .btn
+	{
+	   color:#1abc9c;
+	   float:right;
+	   text-decoration:none;
+	   width:40px;
+	   height:25px;
+	   line-height:40px;
+	   text-align:center;
+	   border-radius:50%;
+	}
+
+  .searchbar:hover .btn
+	{
+	  background:#fff;
+	}
+
+  .carticon
+	{
+	   width:48px;
+	   height:48px;
+	   position:absolute;
+	   overflow:hidden;
+	   margin-left:88%;
+	   margin-bottom:25px;
+	   margin-top:-25px;
+	}
+  .carticon .cline1
+	{
+	   width:15%;
+	   height:7%;
+	   position:absolute;
+	   left:8%;
+	   top:25%;
+	   -webkit-transform:rotate(5deg);
+	   -moz-transform:rotate(5deg);
+	   -ms-transform:rotate(5deg);
+	   transform:rotate(5deg);
+	   background-color:#000;
+	   border-bottom-left-radius:35%;
+	}
+   .carticon .cline2
+	{
+	   width:35%;
+	   height:7%;
+	   position:absolute;
+	   left:6%;
+	   top:40%;
+	   -webkit-transform:rotate(80deg);
+	   -moz-transform:rotate(80deg);
+	   -ms-transform:rotate(80deg);
+	   transform:rotate(80deg);
+	   background-color:#000;
+	}
+  .carticon  .cline2:before
+	{
+	   content:" ";
+	   width:120%;
+	   height:100%;
+	   position:absolute;
+	   left:45%;
+	   top:-280%;
+	   -webkit-transform:rotate(-80deg);
+	   -moz-transform:rotate(-80deg);
+	   -ms-transform:rotate(-80deg);
+	   transform:rotate(-80deg);
+	   background-color:inherit;
+	}
+  .carticon .cline2:after
+	{
+	   content:" ";
+	   width:70%;
+	   height:100%;
+	   position:absolute;
+	   left:59%;
+	   top:-670%;
+	   -webkit-transform:rotate(40deg);
+	   -moz-transform:rotate(40deg);
+	   -ms-transform:rotate(40deg);
+	   transform:rotate(40deg);
+	   background-color:inherit;
+	   border-top-left-radius:50%;
+	   border-bottom-left-radius:25%; 
+	}
+  .carticon .cline3
+	{
+	   width:30%;
+	   height:7%;
+	   position:absolute;
+	   left:35%;
+	   top:45%;
+	   background-color:#000;
+	}
+  .carticon .cline3:after
+	{
+	   content:" ";
+	   width:124%;
+	   height:100%;
+	   position:absolute;
+	   top:-150%;
+	   right:-5%;
+	   background-color:inherit;
+	}
+  .carticon .clinewheel
+	{
+	   width:12%;
+	   height:12%;
+	   background-color:#000;
+	   border-radius:100#;
+	   position:absolute;
+	   left:28%;
+	   bottom:20%;
+	}
+  .carticon .clinewheel:after
+	{
+	   content:" ";
+	   width:100%;
+	   height:100%;
+	   background-color:inherit;
+	   border-radius:100%;
+	   position:absolute;
+	   left:200%;
+	   bottom:0;
+	}
+   .user
+	{
+	   position:absolute;
+	   width:50px;
+	   height:50px;
+	   padding:15px;
+	   font-size:25px;
+	   margin-left:92%;
+	   margin-bottom:25px;
+	   margin-top:-25px;
+	}
+
+   .logo
+	{
+	   position:absolute;
+ 	   width:40px;
+	   height:10px;
+	   margin-left:25%;
+	   margin-top:-85px;
+	}
+
+   .logo  img
+	{
+	   width:500px;
+	   height:165px;
+	}
+
+
+  figure
+	{
+	   text-align:center;
+	   text-indent:0;
+	   padding:70px;
+	   float:left;
+	   font-size:18px;
+	   position:relative;
+	   border:1px solid black;
+	}
+ 
+  .vl
+	{
+	   border-left:4px solid brown;
+	   height:500px;
+	   position:absolute;
+	   left:50%;
+	   margin-bottom:20%
+	}
+
+
+  .slider
+	   {
+	       position:absolute;
+	       top:1010px;
+	       left:55%;
+	       width:550px;
+	       height:450px;
+	       background: url(1.jpg);
+	       margin:100px auto;
+	       animation: slide 20s infinite;
+	   }
+  @keyframes slide
+	  {
+		25% { background: url(2.jpg) }
+		50% { background: url(3.jpg) }
+		75% { background: url(4.jpg) }
+		100% { background: url(1.jpg) }
+	  }
+
+ .review
+	{
+	   font-family:verdana;
+	   font-size:17px;
+	}
+  
+
+ </style>
+	<script>  
+	   function tsidebar()
+	        {
+ 	           document.getElementById("sidebar").classList.toggle('active');
+	        }
+	</script>
+</head>
+
+<body bgcolor="lightblue"> 
+<!-- creating three lines for menu bar -->
+	<div id="sidebar">
+	<div class="togglebtn" onclick="tsidebar()">
+               <span> </span>
+	   <span> </span>
+   	   <span> </span>   
+           </div>    
+	<ul>
+	        <li> HOME </a></li>
+	        <li> ABOUT US </li>
+                    <li> CONTACT US </li>
+	</ul>
+	</div> <br> <br> <br> <br>
+<!--creating the search bar-->
+<div class="searchbar">
+    <input class="inputbox" type="text" name=" " placeholder="Type To Search...">
+    <a class="btn" href="#">
+       <i class="fas fa-search"> </i>
+    </a>
+   
+</div>
+
+<!--creating cart icon-->
+<div class="carticon" style="clear:left; float:left">
+  <div class="cline1" style="background-color:#232527">  </div>
+  <div class="cline2" style="background-color:#232527">  </div>
+  <div class="cline3" style="background-color:#232527">  </div>
+  <div class="clinewheel" style="background-color:#232527">  </div>
+</div>
+
+    <div class="user">
+	 <i class="fas fa-user"> </i>
+    </div>
+
+<!--image for logo-->
+ <div class="logo"> 
+      <img src="C:\Users\DELL\Desktop\punith projects\fliter mocha\cyclogo.jpg" alt="cyclewala">
+ </div>
+
+<!--styling the bar-->
+<br> <br> <br> <br> <br>
+
+<hr style="height:2px;color:blue;background-color:blue;width:50%">
+
+<p style="font-family:Verdana;font-size:20px word-spacing:20px" align="center"> 
+  <b>ATLAS &nbsp &nbsp &nbsp &nbsp &nbsp HERCULES &nbsp &nbsp &nbsp &nbsp &nbsp HERO &nbsp &nbsp &nbsp &nbsp &nbsp AVON &nbsp &nbsp &nbsp &nbsp &nbsp BSA </b></p>
+
+<hr style="height:2px;color:blue;background-color:blue;width:50%">
+
+<br>
+<!--placing images-->
+  <figure>
+	<img src="C:\Users\DELL\Desktop\punith projects\fliter mocha\avon.jpg" alt="AVON" width="220" height="180">
+	<figcaption><b><br>GAMER NV &nbsp Rs 10100/- </b></figcaption>
+  </figure>
+
+  <figure>
+	<img src="C:\Users\DELL\Desktop\punith projects\fliter mocha\hero.jpg" alt="HERO" width="220" height="180">
+	<figcaption><b> <br>THORN FS &nbsp Rs 12800/- </b></figcaption>
+  </figure>
+
+  <figure>
+	<img src="C:\Users\DELL\Desktop\punith projects\fliter mocha\atc.jpg" alt="ATLAS" width="220" height="180">
+	<figcaption><b> <br>CREST &nbsp Rs 15700/- </b></figcaption>
+  </figure>
+
+  <figure>
+	<img src="C:\Users\DELL\Desktop\punith projects\fliter mocha\bsa.jpg" alt="BSA" width="220" height="180" >
+	<figcaption> <b> <br>ELECTRO &nbsp Rs 11100/- </b></figcaption>
+  </figure>
+
+  <figure>
+	<img src="C:\Users\DELL\Desktop\punith projects\fliter mocha\hercu.jpg" alt="HERCULES" width="220" height="180">
+	<figcaption><b> <br>BRUT &nbsp Rs 9990/- </b></figcaption>
+  </figure>
+
+  <figure>
+	<img src="C:\Users\DELL\Desktop\punith projects\fliter mocha\avon1.jpg" alt="AVON" width="220" height="180">
+	<figcaption><b> <br>CALYPSO &nbsp Rs 13200/- </b></figcaption>
+  </figure>
+
+
+<hr style="height:2px;color:blue;background-color:blue;position:relative;width:100%">
+
+<div class="review">   <b><u> CUSTOMER REVIEW:</u></b></div>
+
+
+  <!--div for vertical line-->
+    <div class="vl">   </div>
+
+<!--div for image slideshow-->
+  <div class="slider">  </div>
+
+
+
+</body>
+</html>
